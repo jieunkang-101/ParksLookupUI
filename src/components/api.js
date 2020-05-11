@@ -1,19 +1,15 @@
 import axios from "axios";
 
-const makeRequest = (params) =>
-  axios.get(` http://localhost:5000/api/parks`, {
-    params: {
-      ...params
-    }
-  });
+const makeRequest = () =>
+  axios.get(` http://localhost:5000/api/parks`);
 
 
-const getRequest = async (params = {}) => {
+const getRequest = async () => {
   try {
     const {
       data: { results },
       data
-    } = await makeRequest(params);
+    } = await makeRequest();
     return [results || data, null];
   } catch (e) {
     console.log(e);
@@ -22,5 +18,5 @@ const getRequest = async (params = {}) => {
 };  
 
 export const parksApi = {
-  parks: () => getRequest()
+  getParks: () => getRequest()
 }
