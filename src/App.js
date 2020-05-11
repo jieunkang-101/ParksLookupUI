@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Parks from './components/Parks';
+import ParksContainer from './components/ParksContainer';
 
 function App() {
   return (
-    <Parks />
+    <ParksContainer />
   );
 }
 
